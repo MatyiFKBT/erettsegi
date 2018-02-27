@@ -2,9 +2,9 @@ import requests
 import zipfile
 import os
 import shutil
-os.system('cls') #clear screen
 
 while True:
+    os.system('cls') #clear screen
     év = input("Évjárat? ") # 2 számjegyet vár a program
     mo = input("maj / okt? ") # május/október eldöntése, fontos hogy 3 karakter legyen az input
     folder = év + mo
