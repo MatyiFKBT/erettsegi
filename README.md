@@ -6,3 +6,4 @@ Ez a kis python program bekéri az évjáratot, illetve a hónapot, és azonnal 
  - május/október dönti el hogy őszi vagy tavaszi vizgsa, itt `maj` vagy `okt` a lehetséges érték
 
 Letölthető [innen](https://github.com/MatyiFKBT/erettsegi/releases)
+![egy kis screenshot](https://raw.githubusercontent.com/MatyiFKBT/erettsegi/master/screenshot.PNG)
