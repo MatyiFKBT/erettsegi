@@ -2,14 +2,12 @@ import requests
 import zipfile
 import os
 import shutil
-def letolt(év, évszak, szint, tárgy):
-    mo = ''
-    if évszak == 'okt':
+def letolt(év, mo, szint, tárgy):
+    if mo == 'okt':
         évszak = 'osz'
         mo = 'okt'
-    elif évszak =='maj':
+    elif mo =='maj':
         évszak = 'tavasz'
-        mo = 'maj'
     folder = év + mo
     pdf = '%s%s%s.pdf'%(tárgy,év,mo)
     zipfajl = 'inf%s%s.zip'%(év,mo)
