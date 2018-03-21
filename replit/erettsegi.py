@@ -8,6 +8,7 @@ def letolt(év, mo, szint, tárgy):
         mo = 'okt'
     elif mo =='maj':
         évszak = 'tavasz'
+        
     folder = év + mo
     pdf = '%s%s%s.pdf'%(tárgy,év,mo)
     zipfajl = 'inf%s%s.zip'%(év,mo)
