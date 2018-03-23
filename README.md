@@ -17,4 +17,4 @@ Informatika esetén a forrásokat is, amit ki is tömörít a megfelelő mappáb
     - történelem: `tort`
     - matematika: `mat`
     - nyelvek esetén ékezet nélkül pl **`angol, nemet`**
-- A végén a program újrafuttatható, amennyiben másik évjárat tárgyait is szeretnénk letölteni, ilyenkor a program már az előzőleg bekért tárgyak listájából is tud dolgozni.
+- A végén a program újrafuttatható, amennyiben másik évjárat tárgyait is szeretnénk letölteni, ilyenkor a program már az előzőleg bekért szint, valamint tárgyak listájából is tud dolgozni.
