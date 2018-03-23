@@ -12,9 +12,9 @@ Informatika esetén a forrásokat is, amit ki is tömörít a megfelelő mappáb
  - szint:`emelt` vagy `kozep`
 - tárgyak szóközzel, többet is meg lehet adni, hogy egybe letöltse a program:
 - **Fontos! A tanárgyakat az oktatas.hu-n szereplő formában kell megadni:**
--- magyar irodalom: `magyir`
--- informatika: `inf`
--- történelem: `tort`
--- matematika: `mat`
--- nyelvek esetén ékezet nélkül pl **`angol, nemet`**
+- - magyar irodalom: `magyir`
+- - informatika: `inf`
+- - történelem: `tort`
+- - matematika: `mat`
+- - nyelvek esetén ékezet nélkül pl **`angol, nemet`**
 - A végén a program újrafuttatható, amennyiben másik évjárat tárgyait is szeretnénk letölteni, ilyenkor a program már az előzőleg bekért tárgyak listájából is tud dolgozni.
