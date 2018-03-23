@@ -1,7 +1,7 @@
 # Érettségi letöltő
 ![](https://imgur.com/DS7qQay.gif)
 
-## :arrow_down: Letölthető [innen a legfrissebb változat](https://github.com/MatyiFKBT/erettsegi/releases):arrow_down: 
+## :star: Letölthető [innen a legfrissebb változat](https://github.com/MatyiFKBT/erettsegi/releases) :star: 
 
 Ez a kis python program bekéri az évjáratot, a hónapot, illetve a tantárgyakat, és azonnal letölti az adott érettségi feladatsorokat .pdf-ben, illetve a megoldásokat egy *megoldás* mappába.
 
