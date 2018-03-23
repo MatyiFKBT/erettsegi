@@ -8,7 +8,6 @@ def letolt(év, mo, szint, tárgy):
         mo = 'okt'
     elif mo =='maj':
         évszak = 'tavasz'
-        
     folder = év + mo
     pdf = '%s%s%s.pdf'%(tárgy,év,mo)
     zipfajl = 'inf%s%s.zip'%(év,mo)
@@ -35,7 +34,7 @@ def letolt(év, mo, szint, tárgy):
         zipfile.ZipFile(zipfajl, 'r').extractall(évmo)
         open(zipfajl, 'wb').close()
         os.remove(zipfajl)
-
+        
     print(megoldas, 'letöltése folyamatban...')
     megoldasle = requests.get(megoldas, allow_redirects=True)
     open(mpdf, 'wb').write(megoldasle.content) #megoldás írása
