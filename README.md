@@ -2,7 +2,8 @@
 ![](https://imgur.com/DS7qQay.gif)
 
 ## Letölthető [innen a legfrissebb változat](https://github.com/MatyiFKBT/erettsegi/releases/latest)
-![kép](https://img.shields.io/github/downloads/matyifkbt/erettsegi/total.svg) ![Commits](https://img.shields.io/github/commits-since/matyifkbt/erettsegi/latest.svg) ![last](https://img.shields.io/github/last-commit/google/skia.svg) ![build](https://img.shields.io/circleci/project/github/RedSparr0w/node-csgo-parser.svg)
+[![Total](https://img.shields.io/github/downloads/matyifkbt/erettsegi/total.svg)](https://github.com/MatyiFKBT/erettsegi/releases/latest) [![Commits](https://img.shields.io/github/commits-since/matyifkbt/erettsegi/latest.svg)](https://github.com/MatyiFKBT/erettsegi/commits/master) [![GitHub last commit](https://img.shields.io/github/last-commit/matyifkbt/erettsegi.svg)](https://github.com/MatyiFKBT/erettsegi/commits/master) [![build](https://img.shields.io/circleci/project/github/matyifkbt/erettsegi.svg)]
+
 Ez a kis python program bekéri az évjáratot, a hónapot, illetve a tantárgyakat, és azonnal letölti az adott érettségi feladatsorokat .pdf-ben, illetve a megoldásokat egy *megoldás* mappába.
 
 Informatika esetén a forrásokat is, amit ki is tömörít a megfelelő mappába, ahova a .pdf-eket is elhelyezi azzal a lendülettel, így a felhasználó végeredményként csak egy mappát kap benne a sok-sok feladattal.
