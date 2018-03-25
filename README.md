@@ -1,7 +1,7 @@
 # Érettségi letöltő
 ![](https://imgur.com/DS7qQay.gif)
 
-## Letölthető [innen a legfrissebb változat](https://github.com/MatyiFKBT/erettsegi/releases)
+## Letölthető [innen a legfrissebb változat](https://github.com/MatyiFKBT/erettsegi/releases/latest)
 
 Ez a kis python program bekéri az évjáratot, a hónapot, illetve a tantárgyakat, és azonnal letölti az adott érettségi feladatsorokat .pdf-ben, illetve a megoldásokat egy *megoldás* mappába.
 
@@ -18,3 +18,8 @@ Informatika esetén a forrásokat is, amit ki is tömörít a megfelelő mappáb
     - matematika: `mat`
     - nyelvek esetén ékezet nélkül pl **`angol, nemet`**
 - A végén a program újrafuttatható, amennyiben másik évjárat tárgyait is szeretnénk letölteni, ilyenkor a program már az előzőleg bekért tárgyak listájából is tud dolgozni.
+### Teendők:
+- [x] Egyéni mappa
+- [] GUI
+- [] matek.jimdo.com támogatás
+- [] txt-ben tárolás

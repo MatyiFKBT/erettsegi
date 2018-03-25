@@ -2,7 +2,8 @@ import requests
 import zipfile
 import os
 import shutil
-def letolt(év, mo, szint, tárgy):
+bemappavolt = 0
+def letolt(év, mo, szint, tárgy, *args):
     if mo == 'okt':
         évszak = 'osz'
         mo = 'okt'
@@ -13,14 +14,23 @@ def letolt(év, mo, szint, tárgy):
     zipfajl = 'inf%s%s.zip'%(év,mo)
     mpdf = '%s%s%s_ut.pdf'%(tárgy,év,mo)
     szintbetu = szint[0]
+    while True:
+        try:
+          felhpath = args[0]
+          évmo = felhpath+'/'+folder+'/'
+          megoldás = évmo+'/Megoldasok'
+          break
+        except:
+          évmo = év+mo
+          megoldás = évmo+'/Megoldasok'
+          break
     feladatlap = 'http://dload.oktatas.educatio.hu/erettsegi/feladatok_20%s%s_%s/%s_%s_%s%s_fl.pdf'%(év,évszak,szint,szintbetu,tárgy,év,mo)
     megoldas = 'http://dload.oktatas.educatio.hu/erettsegi/feladatok_20%s%s_%s/%s_%s_%s%s_ut.pdf'%(év,évszak,szint,szintbetu,tárgy,év,mo)
-
     print(feladatlap, 'letöltése folyamatban...')
     feladatle = requests.get(feladatlap, allow_redirects=True)
     open(pdf, 'wb').write(feladatle.content) #feladatlap írása
-    évmo = év+mo
-    megoldás = évmo+'/Megoldasok'
+    if not os.path.exists(évmo):
+        os.makedirs(évmo)
     if not os.path.exists(évmo):
         os.makedirs(évmo)
     if not os.path.exists(megoldás):
@@ -42,6 +52,7 @@ def letolt(év, mo, szint, tárgy):
     shutil.move(pdf, évmo)
 
     return
+
 while True:
     os.system('cls')
     jelenhó = 'maj'
@@ -86,9 +97,14 @@ while True:
             for tárgy in betárgy.split():
                 betárgyak.append(tárgy)
             break
-    for tárgy in betárgyak:
-        letolt(év,behó,beszint,tárgy)
-        #print(év,behó,beszint,tárgy)
+    bemappa = input('Ha szeretnéd megadni, hogy hova mentsen a program, itt megteheted\nHa jó a telepítési könyvtár, akkor nyomj egy Entert:\n')
+    if bemappa != '':
+        for tárgy in betárgyak:
+            letolt(év,behó,beszint,tárgy,bemappa)
+    elif bemappa == '':
+        for tárgy in betárgyak:    
+            letolt(év,behó,beszint,tárgy)
+            #print(év,behó,beszint,tárgy)
     while True:
         még = input('Na még egy kör? (i/n) | Enter = n: ')
         if még in ('i', 'n'):
@@ -100,5 +116,8 @@ while True:
     else:
         print('Kész is vagyunk.\nÉrdemes a fájlokat áthelyezni!\n\nNyomj egy Entert a mappa megnyitásához...')
         input()
-        os.startfile(os.getcwd())
+        if bemappa != '':
+            os.startfile(bemappa)
+        elif bemappa == '':
+            os.startfile(os.getcwd())
         break
