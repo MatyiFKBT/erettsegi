@@ -23,3 +23,4 @@ Informatika esetén a forrásokat is, amit ki is tömörít a megfelelő mappáb
 - [] GUI
 - [] matek.jimdo.com támogatás
 - [] txt-ben tárolás
+=======
