@@ -1,8 +1,10 @@
+[![GitHub last commit](https://img.shields.io/github/last-commit/matyifkbt/erettsegi.svg)](https://github.com/MatyiFKBT/erettsegi/commits/master)
+
 # Érettségi letöltő
 ![](https://imgur.com/DS7qQay.gif)
 
 ## Letölthető [innen a legfrissebb változat](https://github.com/MatyiFKBT/erettsegi/releases/latest)
-[![Total](https://img.shields.io/github/downloads/matyifkbt/erettsegi/total.svg)](https://github.com/MatyiFKBT/erettsegi/releases/latest) [![Commits](https://img.shields.io/github/commits-since/matyifkbt/erettsegi/latest.svg)](https://github.com/MatyiFKBT/erettsegi/commits/master) [![GitHub last commit](https://img.shields.io/github/last-commit/matyifkbt/erettsegi.svg)](https://github.com/MatyiFKBT/erettsegi/commits/master)
+[![Commits](https://img.shields.io/github/commits-since/matyifkbt/erettsegi/latest.svg)](https://github.com/MatyiFKBT/erettsegi/commits/master)
 
 Ez a kis python program bekéri az évjáratot, a hónapot, illetve a tantárgyakat, és azonnal letölti az adott érettségi feladatsorokat .pdf-ben, illetve a megoldásokat egy *megoldás* mappába.
 
