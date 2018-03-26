@@ -1,4 +1,4 @@
-[![GitHub last commit](https://img.shields.io/github/last-commit/matyifkbt/erettsegi.svg)](https://github.com/MatyiFKBT/erettsegi/commits/master)
+[![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.me/mmatyi)
 
 # Érettségi letöltő
 ![](https://imgur.com/DS7qQay.gif)
