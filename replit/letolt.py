@@ -68,6 +68,7 @@ def letolt(év, mo, szint, tárgy, *args):
         shutil.move(pdf2, évmo)
     return
 def letoltp(év, mo, szint, tárgy, *args):
+    #printeli a folyamatot
     if mo == 'okt':
         évszak = 'osz'
         hónap = 'október'
