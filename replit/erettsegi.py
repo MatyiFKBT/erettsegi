@@ -1,6 +1,5 @@
 import os
-from letolt import letoltp
-bemappavolt = 0
+from letolt import letoltp #letoltp = letolt + print
 secret = 0
 while True:
     os.system('cls')
