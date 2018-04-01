@@ -74,6 +74,5 @@ class MyApplication:
         self.mainwindow.mainloop()
         
 if __name__ == '__main__':
-    #root = tk.Tk()
     app = MyApplication()
     app.run()
