@@ -28,6 +28,9 @@ def letolt(év, mo, szint, tárgy, *args):
           break
     feladatlap = 'http://dload.oktatas.educatio.hu/erettsegi/feladatok_20%s%s_%s/%s_%s_%s%s_fl.pdf'%(év,évszak,szint,szintbetu,tárgy,év,mo)
     megoldas = 'http://dload.oktatas.educatio.hu/erettsegi/feladatok_20%s%s_%s/%s_%s_%s%s_ut.pdf'%(év,évszak,szint,szintbetu,tárgy,év,mo)
+    if int(év) < 13:
+        feladatlap = 'https://www.oktatas.hu/bin/content/dload/erettsegi/feladatok_%s_20%s%s/%s_%s_%s%s_fl.pdf'%(szint,év,évszak,szintbetu,tárgy,év,mo)
+        megoldas = 'https://www.oktatas.hu/bin/content/dload/erettsegi/feladatok_%s_20%s%s/%s_%s_%s%s_ut.pdf'%(szint,év,évszak,szintbetu,tárgy,év,mo)
     if tárgy == 'mat':
         if szint == 'emelt':
             feladatlap = 'https://github.com/MatyiFKBT/erettsegi/raw/master/jimdo/%s/emelt20%s%s.pdf'%(szint,év,hónap)
@@ -52,6 +55,8 @@ def letolt(év, mo, szint, tárgy, *args):
 
     if tárgy == 'inf':
         forrasok = 'http://dload.oktatas.educatio.hu/erettsegi/feladatok_20%s%s_%s/%s_%sfor_%s%s_fl.zip'%(év,évszak,szint,szintbetu,tárgy,év,mo)
+        if int(év) < 13:
+            forrasok = 'https://www.oktatas.hu/pub_bin/dload/kozoktatas/erettsegi/feladatok20%s%s/%s_%sofor_%s%s_fl.zip'%(év,évszak,szintbetu,tárgy,év,mo)
         #print(forrasok, 'letöltése folyamatban...')
         forrasle = requests.get(forrasok, allow_redirects=True)
         open(zipfajl, 'wb').write(forrasle.content) #forrás írása
@@ -93,6 +98,10 @@ def letoltp(év, mo, szint, tárgy, *args):
           break
     feladatlap = 'http://dload.oktatas.educatio.hu/erettsegi/feladatok_20%s%s_%s/%s_%s_%s%s_fl.pdf'%(év,évszak,szint,szintbetu,tárgy,év,mo)
     megoldas = 'http://dload.oktatas.educatio.hu/erettsegi/feladatok_20%s%s_%s/%s_%s_%s%s_ut.pdf'%(év,évszak,szint,szintbetu,tárgy,év,mo)
+    if int(év) < 13:
+        feladatlap = 'https://www.oktatas.hu/bin/content/dload/erettsegi/feladatok_%s_20%s%s/%s_%s_%s%s_fl.pdf'%(szint,év,évszak,szintbetu,tárgy,év,mo)
+        megoldas = 'https://www.oktatas.hu/bin/content/dload/erettsegi/feladatok_%s_20%s%s/%s_%s_%s%s_ut.pdf'%(szint,év,évszak,szintbetu,tárgy,év,mo)
+
     if tárgy == 'mat':
         if szint == 'emelt':
             feladatlap = 'https://github.com/MatyiFKBT/erettsegi/raw/master/jimdo/%s/emelt20%s%s.pdf'%(szint,év,hónap)
@@ -117,6 +126,8 @@ def letoltp(év, mo, szint, tárgy, *args):
 
     if tárgy == 'inf':
         forrasok = 'http://dload.oktatas.educatio.hu/erettsegi/feladatok_20%s%s_%s/%s_%sfor_%s%s_fl.zip'%(év,évszak,szint,szintbetu,tárgy,év,mo)
+        if int(év) < 13:
+            forrasok = 'https://www.oktatas.hu/pub_bin/dload/kozoktatas/erettsegi/feladatok20%s%s/%s_%sofor_%s%s_fl.zip'%(év,évszak,szintbetu,tárgy,év,mo)
         print(forrasok, 'letöltése folyamatban...')
         forrasle = requests.get(forrasok, allow_redirects=True)
         open(zipfajl, 'wb').write(forrasle.content) #forrás írása
