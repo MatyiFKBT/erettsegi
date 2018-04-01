@@ -1,51 +1,49 @@
 <?xml version='1.0' encoding='utf-8'?>
 <interface>
-  <object class="ttk.Frame" id="Frame_1">
-    <property name="height">320</property>
-    <property name="takefocus">false</property>
-    <property name="width">600</property>
-    <layout>
-      <property name="column">0</property>
-      <property name="propagate">True</property>
-      <property name="row">0</property>
-    </layout>
+  <object class="tk.Toplevel" id="mainwindow">
+    <property name="relief">raised</property>
+    <property name="resizable">none</property>
+    <property name="takefocus">true</property>
+    <property name="title" translatable="yes">Érettségi Downloader</property>
+    <property name="width">198</property>
     <child>
-      <object class="tk.Canvas" id="canvas">
-        <property name="background">#f0f0f0</property>
-        <property name="insertborderwidth">0</property>
-        <property name="insertontime">0</property>
-        <property name="selectborderwidth">0</property>
-        <layout>
-          <property name="column">0</property>
-          <property name="propagate">True</property>
-          <property name="row">1</property>
-        </layout>
-      </object>
-    </child>
-    <child>
-      <object class="ttk.Label" id="Label_2">
-        <property name="anchor">w</property>
-        <property name="compound">top</property>
+      <object class="ttk.Label" id="Label_7">
+        <property name="compound">left</property>
+        <property name="cursor">based_arrow_up</property>
         <property name="font">{Érettségi Downloader} 12 {bold italic}</property>
         <property name="foreground">#000000</property>
         <property name="padding">21</property>
-        <property name="text" translatable="yes">Érettségi Downloader
-</property>
+        <property name="text" translatable="yes">Érettségi Downloader</property>
         <layout>
           <property name="column">0</property>
           <property name="propagate">True</property>
           <property name="row">0</property>
+          <property name="sticky">n</property>
         </layout>
       </object>
     </child>
     <child>
-      <object class="ttk.Checkbutton" id="Checkbutton_3">
+      <object class="ttk.Label" id="Label_8">
+        <property name="anchor">w</property>
+        <property name="compound">bottom</property>
+        <property name="image">bgsmallpng.png</property>
+        <property name="width">0</property>
+        <layout>
+          <property name="column">0</property>
+          <property name="ipadx">0</property>
+          <property name="pady">40</property>
+          <property name="propagate">True</property>
+          <property name="row">0</property>
+          <property name="sticky">sw</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Checkbutton" id="Checkbutton_6">
         <property name="command">kozep_selected</property>
-        <property name="offvalue">0</property>
-        <property name="onvalue">1</property>
-        <property name="state">normal</property>
         <property name="text" translatable="yes">közép</property>
         <layout>
+          <property name="column">0</property>
           <property name="padx">20</property>
           <property name="propagate">True</property>
           <property name="row">1</property>
@@ -54,10 +52,8 @@
       </object>
     </child>
     <child>
-      <object class="ttk.Checkbutton" id="Checkbutton_4">
+      <object class="ttk.Checkbutton" id="Checkbutton_7">
         <property name="command">emelt_selected</property>
-        <property name="offvalue">0</property>
-        <property name="onvalue">1</property>
         <property name="text" translatable="yes">emelt</property>
         <layout>
           <property name="column">0</property>
@@ -70,22 +66,21 @@
       </object>
     </child>
     <child>
-      <object class="ttk.Combobox" id="Combobox_1">
-        <property name="height">0</property>
-        <property name="postcommand">ev_selected</property>
+      <object class="ttk.Combobox" id="evek">
+        <property name="validatecommand">ev_selected</property>
         <property name="values">2005 2006 2007 2008 2009 2010 2011 2012 2013 2014 2015 2016 2017</property>
+        <bind add="" handler="ev_selected" sequence="&lt;&lt;ComboboxSelected&gt;&gt;" />
         <layout>
           <property name="column">0</property>
-          <property name="padx">120</property>
-          <property name="pady">12</property>
+          <property name="pady">0</property>
           <property name="propagate">True</property>
           <property name="row">1</property>
-          <property name="sticky">ne</property>
+          <property name="sticky">n</property>
         </layout>
       </object>
     </child>
     <child>
-      <object class="ttk.Checkbutton" id="Checkbutton_1">
+      <object class="ttk.Checkbutton" id="Checkbutton_8">
         <property name="command">tavasz_selected</property>
         <property name="text" translatable="yes">tavasz</property>
         <layout>
@@ -98,7 +93,7 @@
       </object>
     </child>
     <child>
-      <object class="ttk.Checkbutton" id="Checkbutton_2">
+      <object class="ttk.Checkbutton" id="Checkbutton_9">
         <property name="command">osz_selected</property>
         <property name="text" translatable="yes">ősz</property>
         <layout>
@@ -112,13 +107,15 @@
       </object>
     </child>
     <child>
-      <object class="ttk.Combobox" id="Combobox_2">
-        <property name="values">magyar matematika informatika</property>
+      <object class="ttk.Combobox" id="targyak">
+        <property name="validatecommand">targy_selected</property>
+        <property name="values">magyar_irodalom történelem matematika angol német informatika fizika kémia biológia</property>
+        <bind add="" handler="targy_selected" sequence="&lt;&lt;ComboboxSelected&gt;&gt;" />
         <layout>
           <property name="column">0</property>
           <property name="ipadx">30</property>
           <property name="ipady">3</property>
-          <property name="pady">90</property>
+          <property name="pady">60</property>
           <property name="propagate">True</property>
           <property name="row">1</property>
           <property name="sticky">n</property>
@@ -127,33 +124,28 @@
     </child>
     <child>
       <object class="pygubu.builder.widgets.pathchooserinput" id="filepath">
-        <property name="path">mentés helye</property>
+        <property name="path">letöltés mappája</property>
         <property name="type">directory</property>
-        <bind add="True" handler="path_changed" sequence="&lt;&lt;PathChooserPathChanged&gt;&gt;" />
+        <bind add="" handler="path_changed" sequence="&lt;&lt;PathChooserPathChanged&gt;&gt;" />
         <layout>
           <property name="column">0</property>
           <property name="ipadx">60</property>
-          <property name="pady">160</property>
+          <property name="pady">125</property>
           <property name="propagate">True</property>
           <property name="row">1</property>
+          <property name="sticky">n</property>
         </layout>
       </object>
     </child>
     <child>
-      <object class="ttk.Button" id="Button_3">
+      <object class="ttk.Button" id="Button_1">
         <property name="command">letoltes_clicked</property>
-        <property name="compound">right</property>
-        <property name="cursor">arrow</property>
-        <property name="default">normal</property>
-        <property name="state">normal</property>
-        <property name="takefocus">false</property>
         <property name="text" translatable="yes">Letöltés</property>
-        <property name="underline">0</property>
         <layout>
           <property name="column">0</property>
           <property name="ipadx">20</property>
           <property name="ipady">10</property>
-          <property name="pady">50</property>
+          <property name="pady">45</property>
           <property name="propagate">True</property>
           <property name="row">1</property>
           <property name="sticky">s</property>
