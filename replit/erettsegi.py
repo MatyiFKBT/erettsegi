@@ -1,5 +1,6 @@
 import os
 from letolt import letoltp #letoltp = letolt + print
+from letolt import letolts #secret
 secret = 0
 while True:
     os.system('cls')
@@ -82,6 +83,7 @@ if secret == 1:
     behó = input('maj vagy okt? ')
     for év in range(int(évek.split()[0]), int(évek.split()[1])+1):
         if bemappa != '':
-                letoltp(str(év),behó,beszint,tárgy,bemappa)
+                letolts(str(év),behó,beszint,tárgy,bemappa)
         elif bemappa == '':  
-                letoltp(str(év),behó,beszint,tárgy)
+                print('Nincs mappa.')
+                #letolts(str(év),behó,beszint,tárgy)

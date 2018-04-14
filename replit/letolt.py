@@ -29,8 +29,8 @@ def letolt(év, mo, szint, tárgy, *args):
     feladatlap = 'http://dload.oktatas.educatio.hu/erettsegi/feladatok_20%s%s_%s/%s_%s_%s%s_fl.pdf'%(év,évszak,szint,szintbetu,tárgy,év,mo)
     megoldas = 'http://dload.oktatas.educatio.hu/erettsegi/feladatok_20%s%s_%s/%s_%s_%s%s_ut.pdf'%(év,évszak,szint,szintbetu,tárgy,év,mo)
     if int(év) < 13:
-        feladatlap = 'https://www.oktatas.hu/bin/content/dload/erettsegi/feladatok_%s_20%s%s/%s_%s_%s%s_fl.pdf'%(szint,év,évszak,szintbetu,tárgy,év,mo)
-        megoldas = 'https://www.oktatas.hu/bin/content/dload/erettsegi/feladatok_%s_20%s%s/%s_%s_%s%s_ut.pdf'%(szint,év,évszak,szintbetu,tárgy,év,mo)
+        feladatlap = 'https://www.oktatas.hu/bin/content/dload/erettsegi/feladatok_%s_20%s%s/%s_%so_%s%s_fl.pdf'%(szint,év,évszak,szintbetu,tárgy,év,mo)
+        megoldas = 'https://www.oktatas.hu/bin/content/dload/erettsegi/feladatok_%s_20%s%s/%s_%so_%s%s_ut.pdf'%(szint,év,évszak,szintbetu,tárgy,év,mo)
     if tárgy == 'mat':
         if szint == 'emelt':
             feladatlap = 'https://github.com/MatyiFKBT/erettsegi/raw/master/jimdo/%s/emelt20%s%s.pdf'%(szint,év,hónap)
@@ -99,8 +99,8 @@ def letoltp(év, mo, szint, tárgy, *args):
     feladatlap = 'http://dload.oktatas.educatio.hu/erettsegi/feladatok_20%s%s_%s/%s_%s_%s%s_fl.pdf'%(év,évszak,szint,szintbetu,tárgy,év,mo)
     megoldas = 'http://dload.oktatas.educatio.hu/erettsegi/feladatok_20%s%s_%s/%s_%s_%s%s_ut.pdf'%(év,évszak,szint,szintbetu,tárgy,év,mo)
     if int(év) < 13:
-        feladatlap = 'https://www.oktatas.hu/bin/content/dload/erettsegi/feladatok_%s_20%s%s/%s_%s_%s%s_fl.pdf'%(szint,év,évszak,szintbetu,tárgy,év,mo)
-        megoldas = 'https://www.oktatas.hu/bin/content/dload/erettsegi/feladatok_%s_20%s%s/%s_%s_%s%s_ut.pdf'%(szint,év,évszak,szintbetu,tárgy,év,mo)
+        feladatlap = 'https://www.oktatas.hu/bin/content/dload/erettsegi/feladatok_%s_20%s%s/%s_%so_%s%s_fl.pdf'%(szint,év,évszak,szintbetu,tárgy,év,mo)
+        megoldas = 'https://www.oktatas.hu/bin/content/dload/erettsegi/feladatok_%s_20%s%s/%s_%so_%s%s_ut.pdf'%(szint,év,évszak,szintbetu,tárgy,év,mo)
 
     if tárgy == 'mat':
         if szint == 'emelt':
@@ -142,4 +142,69 @@ def letoltp(év, mo, szint, tárgy, *args):
     shutil.move(pdf, évmo)
     if feladatok == 2:
         shutil.move(pdf2, évmo)
+    return
+
+def letolts(év, mo, szint, tárgy, *args):
+    # this is only for the secreet menu
+    if mo == 'okt':
+        évszak = 'osz'
+        hónap = 'október'
+    elif mo =='maj':
+        hónap = 'május'
+        évszak = 'tavasz'
+    pdf = '%s%s%s.pdf'%(tárgy,év,mo)
+    zipfajl = 'inf%s%s.zip'%(év,mo)
+    mpdf = '%s%s%s_ut.pdf'%(tárgy,év,mo)
+    szintbetu = szint[0]
+    feladatok = 1
+    while True:
+        try:
+          felhpath = args[0]
+          mappa = felhpath
+          megoldás = mappa + '/Megoldasok'
+          break
+        except:
+            print('nincs mappa. valoszinuleg nem fog mukodni')
+            break
+    feladatlap = 'http://dload.oktatas.educatio.hu/erettsegi/feladatok_20%s%s_%s/%s_%s_%s%s_fl.pdf'%(év,évszak,szint,szintbetu,tárgy,év,mo)
+    megoldas = 'http://dload.oktatas.educatio.hu/erettsegi/feladatok_20%s%s_%s/%s_%s_%s%s_ut.pdf'%(év,évszak,szint,szintbetu,tárgy,év,mo)
+    if int(év) < 13:
+        feladatlap = 'https://www.oktatas.hu/bin/content/dload/erettsegi/feladatok_%s_20%s%s/%s_%so_%s%s_fl.pdf'%(szint,év,évszak,szintbetu,tárgy,év,mo)
+        megoldas = 'https://www.oktatas.hu/bin/content/dload/erettsegi/feladatok_%s_20%s%s/%s_%so_%s%s_ut.pdf'%(szint,év,évszak,szintbetu,tárgy,év,mo)
+    if tárgy == 'mat':
+        if szint == 'emelt':
+            feladatlap = 'https://github.com/MatyiFKBT/erettsegi/raw/master/jimdo/%s/emelt20%s%s.pdf'%(szint,év,hónap)
+        elif szint == 'kozep':
+            feladatlap = 'https://github.com/MatyiFKBT/erettsegi/raw/master/jimdo/%s/közép20%s%s1.pdf'%(szint,év,hónap)
+            feladatlap2 = 'https://github.com/MatyiFKBT/erettsegi/raw/master/jimdo/%s/közép20%s%s2.pdf'%(szint,év,hónap)
+            feladatok = 2
+    #print(feladatlap, 'letöltése folyamatban...')
+    feladatle = requests.get(feladatlap, allow_redirects=True)
+    if feladatok == 2:
+        #print(feladatlap2, 'letöltése folyamatban...')
+        feladatle2 = requests.get(feladatlap2, allow_redirects=True)
+        pdf2 = '%s%s%s2.pdf'%(tárgy,év,mo)
+        open(pdf2, 'wb').write(feladatle2.content)
+    open(pdf, 'wb').write(feladatle.content) #feladatlap írása
+    if not os.path.exists(megoldás):
+        os.makedirs(megoldás)
+
+    if tárgy == 'inf':
+        forrasok = 'http://dload.oktatas.educatio.hu/erettsegi/feladatok_20%s%s_%s/%s_%sfor_%s%s_fl.zip'%(év,évszak,szint,szintbetu,tárgy,év,mo)
+        if int(év) < 13:
+            forrasok = 'https://www.oktatas.hu/pub_bin/dload/kozoktatas/erettsegi/feladatok20%s%s/%s_%sofor_%s%s_fl.zip'%(év,évszak,szintbetu,tárgy,év,mo)
+        #print(forrasok, 'letöltése folyamatban...')
+        forrasle = requests.get(forrasok, allow_redirects=True)
+        open(zipfajl, 'wb').write(forrasle.content) #forrás írása
+        zipfile.ZipFile(zipfajl, 'r').extractall(mappa)
+        open(zipfajl, 'wb').close()
+        os.remove(zipfajl)
+    
+    #print(megoldas, 'letöltése folyamatban...')
+    megoldasle = requests.get(megoldas, allow_redirects=True)
+    open(mpdf, 'wb').write(megoldasle.content) #megoldás írása
+    shutil.move(mpdf, megoldás)
+    shutil.move(pdf, mappa)
+    if feladatok == 2:
+        shutil.move(pdf2, mappa)
     return
