@@ -23,6 +23,5 @@ Informatika esetén a forrásokat is, amit ki is tömörít a megfelelő mappáb
 - A végén a program újrafuttatható, amennyiben másik évjárat tárgyait is szeretnénk letölteni, ilyenkor a program már az előzőleg bekért tárgyak listájából is tud dolgozni.
 ### Teendők:
 - [x] Egyéni mappa
-- [ ] GUI
 - [x] matek.jimdo.com támogatás
 - [ ] txt-ben tárolás
