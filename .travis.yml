@@ -1,0 +1,3 @@
+language: python
+script:
+  - pyinstaller --onefile replit/erettsegi.py
