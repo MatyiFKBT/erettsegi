@@ -3,7 +3,6 @@ python:
 - 3.6
 script:
 - pyinstaller --onefile replit/erettsegi.py
-- ls replit/dist
 deploy:
   skip_cleanup: true
   provider: releases
