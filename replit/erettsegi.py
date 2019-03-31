@@ -6,7 +6,7 @@ while True:
     os.system('cls')
     jelenhó = 'maj'
     beszint= 'kozep'
-    beév = input('Add meg az évszámot, illetve a hónapot,vagy nyomj Entert ha megfelel a jelenlegi: \n Például: 15 okt\n')
+    beév = input('Add meg az évszámot, illetve a hónapot,vagy nyomj Entert ha megfelel a jelenlegi: \n Például: 15 okt\n') or '15 okt'
     if beév == 'secret':
         secret = 1
         break
@@ -22,9 +22,7 @@ while True:
     while True:
         try:
             print('Jelenlegi szint: ',jelenszint)
-            beszint = input('Ha megfelel, nyomj Entert, vagy adj meg egy szintet:\n')
-            if beszint == '':
-                beszint = jelenszint
+            beszint = input('Ha megfelel, nyomj Entert, vagy adj meg egy szintet:\n') or jelenszint
             break
         except:
             beszint = input('Nincs eltárolva szint, kozep/emelt\n')
@@ -34,13 +32,10 @@ while True:
         try:
             print('Jelenlegi: ', betárgyak)
             jelentárgyak = betárgyak
-            betárgy = input('Ha jó az előző adag akkor nyomj Entert, vagy adj meg tárgyakat:\n')
-            if betárgy == '':
-                betárgyak = jelentárgyak
-            elif betárgyak != '':
-                betárgyak = []
-                for tárgy in betárgy.split():
-                    betárgyak.append(tárgy)
+            betárgy = input('Ha jó az előző adag akkor nyomj Entert, vagy adj meg tárgyakat:\n') or jelentárgyak
+            betárgyak = []
+            for tárgy in betárgy.split():
+                betárgyak.append(tárgy)
             break
         except:
             betárgyak = []
@@ -49,7 +44,7 @@ while True:
             for tárgy in betárgy.split():
                 betárgyak.append(tárgy)
             break
-    bemappa = input('Ha szeretnéd megadni, hogy hova mentsen a program, itt megteheted\nHa jó a telepítési könyvtár, akkor nyomj egy Entert:\n')
+    bemappa = input('Ha szeretnéd megadni, hogy hova mentsen a program, itt megteheted\nAmennyiben jó a telepítési/jelenlegi könyvtár, akkor nyomj egy Entert:\n')
     if bemappa != '':
         for tárgy in betárgyak:
             letoltp(év,behó,beszint,tárgy,bemappa)
@@ -66,7 +61,10 @@ while True:
     if még == 'i':
         continue
     else:
-        print('Kész is vagyunk.\nÉrdemes a fájlokat áthelyezni!\n\nNyomj egy Entert a mappa megnyitásához...')
+        print('Kész is vagyunk.')
+        if bemappa != '':
+            print('Érdemes a fájlokat áthelyezni!')
+        print('Nyomj egy Entert a mappa megnyitásához...')
         input()
         if bemappa != '':
             os.startfile(bemappa)
