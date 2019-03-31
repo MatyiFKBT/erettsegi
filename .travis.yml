@@ -1,5 +1,13 @@
 language: python
 python:
-  - 3.6
+- 3.6
 script:
-  - pyinstaller --onefile replit/erettsegi.py
+- pyinstaller --onefile replit/erettsegi.py
+deploy:
+  provider: releases
+  api_key:
+    secure: kqziz70kgAPhwEn0xj2FELMT4njBDx7BVMXmx/vdh+WYH6CQhhCPbMnfMNhTrnXfaseeQWX3/bCfzJrCGECOUF6XH3+tqNk7m0Apf6PbVf1RioZeoIC+g38lN3ShfPN8ih4atoCbLyqQeYnvAkwDe8EaS0D6ySRvnltHRGl9hDDzaCJKiNi5dT2QIvQCoWRloC6TRoLdL4bnwwhMF7sqneRIrNIgmw6oZaZvNBW/d0vcY3/Jf+A4/VBAD8PAvOWb+15o0r8f3sAevgQyqU3qnwCX6oPYvpKwQMnWx4VUItbutFg9L3ZqQ2ryguNBW2fzrKQdZ4JkcmzJnhg5DwR+xAvPu4gRTog/7+nGPQzDKCiuYkUm0aSu2/G/XvOUkn2UEV+4XH7HN8XOVSEUZHTB9KIYNLUak1UdSDoWCPYgvjGPOFu899OAcPQxXJs8oxbIIrkc+C0OP4Ia/YwFlrHm4UdbE8DWB6rIFJBIuEfcI0qmjHZJdtTobmivswfH05a3So4Ydm5HY6uhgdj/es/281vQ8EvI28BcMVXGyM3jKvvUuYulm5u3lCA0wp6UPR8RFqvxggkj5t41RwF1h8h9IbFe0qz1z9bKbn4scswE2AT5sQGw79hm/vA+oLBpjfHPn35+DQlAkFs7kvUGf7ipqn/liH00kcyyhnw/ObGgIL4=
+  file: replit/dist/erettsegi.exe
+  on:
+    repo: MatyiFKBT/erettsegi
+    tags: true
