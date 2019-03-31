@@ -3,6 +3,16 @@ python:
 - 3.6
 script:
 - pyinstaller --onefile replit/erettsegi.py
+
+after_success:
+  - mkdir -p release
+  - pyinstaller --onefile replit/erettsegi.py --distpath ./release
+
+before_deploy:
+  - echo "Deploying to GitHub releases"
+  - ls -al releases
+
+
 deploy:
   skip_cleanup: true
   provider: releases
