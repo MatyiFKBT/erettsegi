@@ -10,4 +10,3 @@ deploy:
   file: replit/dist/erettsegi.exe
   on:
     repo: MatyiFKBT/erettsegi
-    tags: true
